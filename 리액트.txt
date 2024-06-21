@@ -1,0 +1,58 @@
+
+*스프링부트 react 연동
+-visual studio 설치
+-node 설치
+*mybatis 설정
+
+
+[참고]
+https://choijying21.tistory.com/154
+https://ldgeao99-developer.tistory.com/642
+
+
+
+< node.js 시작 >
+vscode = 터미널 -> node -v
+ npm -v (= node.pacakage manager) 설치
+spring initializr에서 프로젝트 만들기 (group : com.global/ name :react / spring web / 제너레이트)
+-> 스프링 workspace_sts 에 압축풀어 넣기 (demo 처럼/ 코끼리 나와야 함)
+-> spring boot / workspace 열고 import -> 프로젝트 우틀릭 //gradle refresh 
+
+jdk 20 으로 맞춰야 함 (build path) -> src / main 폴더 클릭 + alt +enter 누르고 주소 복사하고
+터미널에 붙여넣기 (ex:  cd 누르고 한칸 띄우고 C:\workspace_sts\react\src\main) 
+
+<vs code 터미널 > 
+cd C:\workspace_sts\react\src\main
+npx create-react-app frontend   -> 자동설치 됨 
+=> main 에 frontend 폴더 만들어짐 (react 폴더 새로고침 프로젝트 우클릭 refresh) 
+frontend 폴더 확인 -> src-> app.js 화면 띄우기 
+- vscode 에서 폴더열기 -> frontend 폴더 / app.js 파일열기
+- 새 터미널 / npm run start 치면 / react 화면 localhost 3000 서버 나옴 / 리액트 표시 나오면 제대로 설치된 것
+
+
+=> 스프링부트 / 리액트 서버 따로 띄워서 데이터 서로 받아오기 
+= front / back 같이 관리 하기 위함 
+
+< 통신 해주기 > 
+- com.global.react 에 클래스 만들어 api 통신 연결해주기 코드 적기 (BoardController)
+- app.js (vscode) 에 코드 수정 
+- 서버 위치 잡기 (porxy  서버 연결선택 / "proxy" :"http://localhost:8080", / package.json (vs code)에 넣기
+- 서버 설치 npm install axios
+- 서버 켜기 npm run start (터미널에서)
+
+
+스프링에서의 실행-> ReactApplication.java 우클릭 -> Run as / Spring boot app
+
+
+ / static 에 build 하면 된다 
+- npm run build  
+하면 frontend 에 build 소스 생기고 -> static 에 빌드 하면 된다 
+
+
+
+ background-color: #fefefe;
+  display: block;
+  justify-content: center;
+  margin: 0,auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 80%;
