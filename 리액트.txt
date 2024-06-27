@@ -49,10 +49,19 @@ frontend 폴더 확인 -> src-> app.js 화면 띄우기
 하면 frontend 에 build 소스 생기고 -> static 에 빌드 하면 된다 
 
 
+-------------------------------------------------------------------------------------------------------------
+*mybatis 설정
 
- background-color: #fefefe;
-  display: block;
-  justify-content: center;
-  margin: 0,auto; /* 15% from the top and centered */
-  border: 1px solid #888;
-  width: 80%;
+
+컨트롤 / 시프트 / O = 불필요한 import 걸러내주는 것 
+[참고]
+https://ldgeao99-developer.tistory.com/642
+
+react 에서 mybatis 설정 
+1) build gradle 에서 dependencies 에 붙여넣기 (maven repositories / gradle ver )
+// https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8
+implementation group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '23.4.0.24.05'
+implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.0
+
+2) application.properties 에 아래 내용 추가하기
+controller / service  / mapper 
